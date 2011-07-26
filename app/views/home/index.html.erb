@@ -1,0 +1,71 @@
+<%= javascript_include_tag '/javascripts/twitter.js' %>
+<div id="wrapper">
+	<div id="page">
+
+		<div id="page-bgtop">
+			<hr />
+			<div id="content">
+              <% @messages.each do |sms| %>
+                <div class="post">
+                  <% if !sms.image.nil? then %>
+                    <div class="entry-image"><img src="<%= sms.image %>" alt="<%= sms.title %>" width="280" height="200" /></div>
+                  <% end %>
+                  <h2 class="title"><%= sms.title %></h2>
+                  <p class="meta"><%= sms.updated_at %> Por <%= sms.name %></p>
+                  <div class="entry">
+						<p><%= sms.content %></p>
+						<p class="links"><a href="<%= sms.url %>">Ver</a><!--  	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">Comentarios</a>--></p>
+					</div>
+                </div>
+              <% end %>
+			</div>
+			<div id="sidebar">
+				<ul>
+					<li>
+
+						<h2>Sobre mi</h2>
+						<p>Soy programador de p&aacute;ginas web y un friki. Me gustan las consolas (actualmente tengo una Xbox 360), los mangas y los anime.</p>
+					</li>
+					<li>
+						<h2>Últimos tweets</h2>
+						<ul id="latest_tweet"></ul>
+                        <div id="follow">
+                            <a href="http://www.twitter.com/cherokienet"><img src="http://twitter-badges.s3.amazonaws.com/t_mini-a.png" alt=""/>
+                                <span>Sígueme en Twitter</span>
+                            </a>
+                      </div>
+					</li>
+					<li>
+						<h2>Webs amigas</h2>
+						<ul>
+							<li><a href="http://www.peugeot407coupe.com/">Peugeot 407 Coupe</a></li>
+							<li><a href="http://xavierdomenech.blogspot.com/">Blog de Xavier Domenech</a></li>
+							<li><a href="http://www.albertclemente.com/">Blog de Albert Clemente</a></li>
+							<li><a href="http://receptesalajo.blogspot.com/">Receptes a la jo</a></li>
+							<li><a href="http://aloon.com/">Blog de Aloon</a></li>
+							<!--<li><a href="#">Eget tempor eget nonummy</a></li>
+							<li><a href="#">Nec metus sed donec</a></li>
+							<li><a href="#">Nec metus sed donec</a></li>-->
+						</ul>
+					</li>
+				</ul>
+				<ul>
+				<script type="text/javascript"><!--
+google_ad_client = "pub-4521843135479709";
+/* 200x90, creado 18/11/09 */
+google_ad_slot = "1081851343";
+google_ad_width = 200;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+
+</script>
+</ul>
+			</div>
+			<!-- end #sidebar -->
+			<div style="clear: both;">&nbsp;</div>
+		</div>
+	</div>
+</div>

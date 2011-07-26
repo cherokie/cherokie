@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Cherokie</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%= stylesheet_link_tag '/css/style.css' %>
+  <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js' %>
+  <%= javascript_include_tag 'http://platform.twitter.com/widgets.js' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
-
+<%= render :partial => 'shared/header' %>
+<%= yield :layout %>
+<%= render :partial => 'shared/footer' %>
 </body>
 </html>
