@@ -1,9 +1,13 @@
 Cherokie::Application.routes.draw do
+  get "anime/index"
+
   get "juegos/index"
 
   root :to => "home#index"
   get "home/index"
+  
   match 'Juegos' => 'juegos#index'
+  match 'Anime' => 'anime#index'
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

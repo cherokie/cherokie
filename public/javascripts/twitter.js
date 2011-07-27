@@ -1,6 +1,13 @@
 $(document).ready(function() {
-        $.getScript('http://twitter.com/statuses/user_timeline/cherokienet.json?callback=twitterCallback2&count=5');
-    });
+    $.getScript('http://twitter.com/statuses/user_timeline/cherokienet.json?callback=twitterCallback2&count=5');
+
+    $('.menubar').removeClassName('current_page_item');
+    if ($('#hMenubar').val() != ''){
+        $('.' + $('#hMenubar').val() + '').addClassName('current_page_item');
+    }else{
+        $('.home').addClassName('current_page_item');
+    }
+});
 
 function twitterCallback2(obj) {
     var twitters = obj;

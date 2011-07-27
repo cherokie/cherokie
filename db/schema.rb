@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110726150125) do
+ActiveRecord::Schema.define(:version => 20110727060242) do
 
   create_table "messages", :force => true do |t|
     t.string   "name"
@@ -28,6 +28,24 @@ ActiveRecord::Schema.define(:version => 20110726150125) do
     t.string   "title"
     t.string   "image"
     t.text     "content"
+    t.integer  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "twitanimes", :force => true do |t|
+    t.string   "account"
+    t.string   "description"
+    t.integer  "number"
+    t.integer  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "twits", :force => true do |t|
+    t.string   "account"
+    t.string   "description"
+    t.integer  "number"
     t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
