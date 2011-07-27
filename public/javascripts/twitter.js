@@ -1,11 +1,11 @@
 $(document).ready(function() {
     $.getScript('http://twitter.com/statuses/user_timeline/cherokienet.json?callback=twitterCallback2&count=5');
 
-    $('.menubar').removeClassName('current_page_item');
+    $('.menubar').removeClass('current_page_item');
     if ($('#hMenubar').val() != ''){
-        $('.' + $('#hMenubar').val() + '').addClassName('current_page_item');
+        $('.' + $('#hMenubar').val() + '').addClass('current_page_item');
     }else{
-        $('.home').addClassName('current_page_item');
+        $('.home').addClass('current_page_item');
     }
 });
 
