@@ -1,2 +1,8 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(document).ready(function() {
+    $('.menubar').removeClass('current_page_item');
+    if ($('#hMenubar').val() != ''){
+        $('.' + $('#hMenubar').val() + '').addClass('current_page_item');
+    }else{
+        $('.home').addClass('current_page_item');
+    }
+});

@@ -1,6 +1,10 @@
 class HomeController < ApplicationController
   def index
-    @messages = Message.all
+    @messages = Message.find(
+      :all,
+      :limit => 3,
+      :order => 'id desc'
+    )
 
     
   end

@@ -13,5 +13,6 @@ function twitterCallback2(obj) {
         username = twitters[i].user.screen_name
         statusHTML += ('<li><span>'+twitters[i].text+'</span> <a style="font-size:85%" href="http://twitter.com/'+username+'/statuses/'+twitters[i].id+'">'+today+'</a></li>')
     }
-    $('#latest_tweet_EA').html(statusHTML);
+    
+    $('#latest_tweet_' + username).html(statusHTML);
 }

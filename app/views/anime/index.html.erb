@@ -2,20 +2,25 @@
 <div id="wrapper">
   <div id="page">
     <div id="page-bgtop">
-      <% @twits.each do |twit| %>
-      <div class="post">
-        <h2>Últimos tweets de <%= twit.description %></h2>
-        <div class="entry">
-          <ul id="latest_tweet_<%= twit.account %>"></ul>
+      <hr />
+      <div id="content">º
+        <% @twits.each do |twit| %>
+        <div class="post">
+          <h2>Últimos tweets de <%= twit.description %></h2>
+          <div class="entry">
+            <ul id="latest_tweet_<%= twit.account %>"></ul>
+          </div>
+          <div id="follow">
+              <a href="http://www.twitter.com/<%= twit.account %>"><img src="http://twitter-badges.s3.amazonaws.com/t_mini-a.png" alt=""/>
+                  <span>Sigue a <%= twit.description %> en Twitter</span>
+              </a>
+          </div>
         </div>
-        <div id="follow">
-            <a href="http://www.twitter.com/<%= twit.account %>"><img src="http://twitter-badges.s3.amazonaws.com/t_mini-a.png" alt=""/>
-                <span>Sigue a <%= twit.description %> en Twitter</span>
-            </a>
-        </div>
+        <input type="hidden" class="jq_twits" id="h<%= twit.account %>" value="<%= twit.account %>" />
+        <% end %>
       </div>
-      <input type="hidden" class="jq_twits" id="h<%= twit.account %>" value="<%= twit.account %>" />
-      <% end %>
+      <%=render :partial=>'sidebar'%>
+      <div style="clear: both;">&nbsp;</div>
     </div>
   </div>
 </div>
