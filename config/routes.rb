@@ -1,4 +1,6 @@
 Cherokie::Application.routes.draw do
+  get "update/index"
+
   get "anime/index"
 
   get "juegos/index"
@@ -8,6 +10,7 @@ Cherokie::Application.routes.draw do
   
   match 'Juegos' => 'juegos#index'
   match 'Anime' => 'anime#index'
+  match 'update' => 'update#index'
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
